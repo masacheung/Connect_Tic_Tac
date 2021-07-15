@@ -25,8 +25,9 @@ class Board
     end
 
     def horizontal_winner?(token)
-        check = Marshal.load(Marshal.dump(@stacks))
-
+        # check = Marshal.load(Marshal.dump(@stacks))
+        # check = @stacks.clone
+        check = @stacks.map(&:clone)
             
         check.each do |subarr|
             while subarr.length != @max_height
