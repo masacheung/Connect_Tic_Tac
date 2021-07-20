@@ -19,6 +19,9 @@ class ConnectTacToe
 
     def play_turn
         stack = @current_player.get_stack_index
+        while stack > @board.max_height
+            stack = @current_player.get_stack_index
+        end
         @board.add(@current_player.token, stack)
         self.switch_players!
     end
